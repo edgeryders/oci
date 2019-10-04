@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>OCI Lab | Edgeryders</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../assets/css/vendor.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Raleway:300,400,600,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.css">
+
+    <style>
+        body * {
+            direction: rtl;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif
+        }
+        
+        h1 {
+            font-size: 3em
+        }
+        
+        h2 {
+            padding: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            float: right;
+            font-size: 1.8em;
+            line-height: 1.2em
+        }
+        
+        h3 {
+            padding: 5px 15px
+        }
+        
+        p {
+            font-family: Ubuntu, sans-serif;
+            color: #f0f8ff;
+            font-size: 1.4em;
+            padding-top: 10px
+        }
+        
+        a,
+        a:hover {
+            color: #0ff
+        }
+        
+        a {
+            text-decoration: none
+        }
+        
+        a:hover {
+            text-decoration: underline
+        }
+        
+        a.tag {
+            color: #000;
+            background: #fafafa;
+            font-size: 12px;
+            padding: 8px 12px;
+            border-radius: 15px;
+            margin-right: 10px;
+            border: 1px dashed #4e4e4e;
+            transition: 1.2s all
+        }
+        
+        a.tag:hover {
+            text-decoration: none;
+            border: 1px dashed RGBA(233, 108, 47, 1.00)
+        }
+        
+        a.tag.active {
+            background: RGBA(233, 108, 47, 1.00);
+            color: #fff;
+            border: 1px solid RGBA(233, 108, 47, 1.00)
+        }
+        
+        #video-container,
+        .header-unit {
+            position: relative;
+            height: 400px;
+            width: 100%
+        }
+        
+        @keyframes fade {
+            100% {
+                opacity: 1
+            }
+        }
+        
+        #video-container svg {
+            transform: scale(.7) translate(0, 50px);
+            position: absolute;
+            left: 20px;
+        }
+        
+        .title p {
+            text-align: right;
+        }
+        
+        .title {
+            z-index: 1000;
+            text-align: center
+        }
+        
+        .main-title {
+            text-align: right !important;
+            margin: 0 0px 0 0;
+        }
+        
+        #partner,
+        #points,
+        .form-title h2 {
+            text-align: right
+        }
+        
+        #intro h1 {
+            margin-bottom: 20px;
+            float: right;
+        }
+        
+        .table .legend li:before {
+            right: 0;
+            top: 0px;
+        }
+        
+        .table .key li.entry.active:after {
+            position: absolute;
+            left: -20px !important;
+            right: auto;
+            transform: scale(-1);
+        }
+        
+        .table .key li.entry {
+            background-position: 95% center !important;
+            padding-right: 65px;
+        }
+        
+        .table .key li.entry {
+            background-position: 95% center !important;
+            padding-right: 65px;
+        }
+        
+        .table .legend {
+            padding-right: 40px;
+        }
+        
+        .table .legend p {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        
+        .table .legend ul li {
+            padding-right: 30px;
+        }
+        
+        .swiper-slide .footer #date {
+            flex-grow: 0 !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="top-nav">
+
+        <div class="social">
+            <a href="https://edgeryders.eu"><img src="../assets/img/oci_logo_2.png" class="logo" width="66px">
+            </a>
+            <ul class="social-icons shadow" style="float: left;">
+                <li class="tab">
+                    <a href="https://www.facebook.com/OpenCollectiveIntelligenceLAB/" target="_blank">
+                        <i class="fa fa-facebook circle"></i>
+                        <span class="screen-reader"></span>
+                    </a>
+                </li>
+                <li class="tab">
+                    <a href="https://twitter.com/edgeryders">
+                        <i class="fa fa-twitter circle"></i>
+                        <span class="screen-reader"></span>
+                    </a>
+                </li>
+                <li class="tab">
+                    <a href="https://www.linkedin.com/company/edgeryders">
+                        <i class="fa fa-linkedin circle"></i>
+                        <span class="screen-reader"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="button">
+            <div class="icon">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="active"><a href="http://openvillage.edgeryders.eu/oci">OCI LAB</a></li>
+                <li><a href="https://edgeryders.eu/c/openvillage" target="_blank">Community Forum</a></li>
+                <li><a href="https://edgeryders.eu/t/about-us/42" target="_blank">Edgeryders</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <div id="page">
+
+        <div id="scrollContainer">
+
+            <div class="header-unit">
+
+                <div id="video-container">
+
+                    <svg width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                            <path class="polygon" fill="#FF7D4A" d="M299.5 349l60.5 24.8-56 78.4z" />
+                            <path class="polygon" fill="#FFA92C" d="M299.5 349l139.3-38.4-78.8 63.2z" />
+                            <path class="polygon" fill="#FF3F2E" d="M438.8 310.6l-40.1-42.4-99.2 80.9z" />
+                            <path class="polygon" fill="#FF8332" d="M438.8 310.6l5.3-27.3-45.4-15.1z" />
+                            <path class="polygon" fill="#FFA92C" d="M398.7 268.2L299.5 349l-11.6-50.8z" />
+                            <path class="polygon" fill="#FF7D4A" d="M299.5 349l-11.6-50.7h-52.8z" />
+                            <path class="polygon" fill="#FF3F2E" d="M398.7 268.2l67.8 23 31.9-55zM398.7 268.2l-17-73.1L288 298.3z" />
+                            <path class="polygon" fill="#008892" d="M398.7 268.2L466 116.8l-84.4 78.3z" />
+                            <path class="polygon" fill="#002A38" d="M398.7 268.2l99.7-32-69.3-36z" />
+                            <path class="polygon" fill="#00CEC4" d="M429 200.3l69.4 36-8-92.3z" />
+                            <path class="polygon" fill="#FF3F2E" d="M466.1 116.8l24.3 27.2-59.7 54.2z" />
+                            <path class="polygon" fill="#00CEC4" d="M381.7 195l84.4-78.2-14.6-38.4z" />
+                            <path class="polygon" fill="#008892" d="M381.7 195l69.8-116.6-100.6 7.3z" />
+                            <path class="polygon" fill="#00CEC4" d="M381.7 195L288 298.4l-48.3-108.2z" />
+                            <path class="polygon" fill="#8D0015" d="M288 298.3l-48.4-108.2-108.4 70.4z" />
+                            <path class="polygon" fill="#00A8A8" d="M288 298.3l-156.8-37.8 6.2 37.8z" />
+                            <path class="polygon" fill="#FF3F2E" d="M131.2 260.5l108.4-70.4v-93z" />
+                            <path class="polygon" fill="#FF650A" d="M239.6 97.1v93l142.1 5z" />
+                            <path class="polygon" fill="#FF8332" d="M381.7 195L239.6 97.2 299.4 66z" />
+                            <path class="polygon" fill="#FFA92C" d="M299.4 66l51.5 19.7L381.7 195z" />
+                            <path class="polygon" fill="#FF8332" d="M351 85.7l30.7-71.3 69.8 64z" />
+                            <path class="polygon" fill="#002A38" d="M351 85.7l30.7-71.3-76.6-5.6z" />
+                            <path class="polygon" fill="#008892" d="M351 85.7L299.3 0 293 64z" />
+                            <path class="polygon" fill="#00CEC4" d="M299.4 0L131.2 5.7 293 64z" />
+                            <path class="polygon" fill="#008892" d="M299.4 66L128.8 5l110.8 92.1z" />
+                            <path class="polygon" fill="#002A38" d="M239.6 97.1l-110.8-92-23 115.4z" />
+                            <path class="polygon" fill="#FF3100" d="M105.7 120.5l24.8 140.7 109-164z" />
+                            <path class="polygon" fill="#8D0015" d="M130.2 260.8l-24.5-140.3L0 113z" />
+                            <path class="polygon" fill="#00A8A8" d="M130.2 260.8L0 113l7 82z" />
+                            <path class="polygon" fill="#002A38" d="M130.2 261.2L6.9 195l69.5 65.4z" />
+                            <path class="polygon" fill="#008892" d="M0 113l105.7 7.5L128.8 5.1z" />
+                        </g>
+                    </svg>
+
+                    <div class="title">
+                        <div class="main-header">
+                            <h1 class="main-title">
+                            	نحن نستخدم قوة الذكاء الجماعي لدعم المشاريع الاجتماعية من التصور إلى الإعتماد <span class="blink">|</span></h1>
+                            <p>#Open_Collective_Intelligence_Lab هي مبادرة يدعمها مجتمع Edgeryders.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="language">
+                    <a class="tag" href="../">English</a>
+                    <a class="tag" href="../fr/">Français</a>
+                    <a class="tag active" href="../ar/">العربية</a>
+                </div>
+
+            </div>
+
+            <div class="block" id="intro">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-5" id="points">
+
+                            <div class="plyr__video-embed" id="player">
+                                <iframe src="https://player.vimeo.com/video/226699264?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media" allowfullscreen allowtransparency allow="autoplay" poster="video-poster.jpg"></iframe>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-7">
+                            <h1 style="float: none; width: 80%">OCI Lab، حاضنة بين الأقران للمشاريع الاجتماعية</h1>
+                            <p>"مختبر الذكاء الجماعي المفتوح" هو أول حاضنة افتراضية بين الأقران لدعم رواد الأعمال الشباب الطموحين في منطقة الشرق الأوسط وشمال إفريقيا من خلال التوجيه والتواصل عبر الإنترنت.</p>
+
+                            <br />
+                            <div class="join">
+                                <a class="join-button" href="#who">لمن هذا؟</a>
+                                <a class="join-button" href="#how">كيف يتم الأمر؟</a>
+                                <a class="join-button" href="#start">البدء</a>
+
+                            </div>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="photobanner">
+                    <div class="mover"></div>
+                </div>
+
+            </div>
+
+            <div class="block" id="about">
+
+            </div>
+
+            <div class="block green" id="join">
+                <div id="join-us">
+                    <h2 class="join-title" style="margin-right: 130px">كيف لي أن أعرف أنه أمر جيد؟</h2>
+                    <div class="organisation">
+                        <div class="community">
+                            <img src="../assets/img/profiles.jpg">
+                            <div class="about">
+                                <h3>المجتمع الداعم</h3>
+                                <p>يتم تشغيل مختبر الذكاء الجماعي المفتوح بواسطة Edgeryders ، وهو مجتمع يضم أكثر من 5000 شخص من خلفيات مختلفة في أكثر من 80 دولة.</p>
+                            </div>
+                        </div>
+                        <div class="company">
+                            <div class="about">
+                                <h3>المنظمة</h3>
+                                <p>Edgeryders OÜ هي شركة تتعايش مع مجتمع عبر الإنترنت يضم الآلاف من الهاكرز والنشطاء والمفكرين المتطرفين والفاعلين، والأشخاص العاديين الذين يريدون إحداث تغيير. بدأت الشركة في عام 2013 كعرض ثانوي لمشروع تابع لمجلس أوروبا. وهي تخدم المجتمع وتستخدم ذكاءها الجماعي لتشغيل أنشطتها الخاصة في نفس الوقت.</p>
+                            </div>
+                            <iframe class="video" src="https://player.vimeo.com/video/181764358?byline=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block green" id="join">
+                <a id="who"></a>
+                <div id="join-us">
+                    <h2 class="join-title">لمن هذا؟</h2>
+                </div>
+
+                <div class="table">
+
+                    <div class="legend" id="legend">
+                        <h2>الشباب الطموح من أصحاب المشاريع الاجتماعية الذين..</h2>
+                        <ul>
+                            <li>تتراوح أعمارهم بين 18 و 35 سنة</li>
+                            <li>مستقرون في واحدة من البلدان التالية في منطقة الشرق الأوسط وشمال إفريقيا (تونس ، لبنان ، المغرب ، مصر أو الأردن)
+                            </li>
+                            <li>لديهم أفكار رائعة لإحداث تغيير اجتماعي / بيئي إيجابي في مجتمعهم. على الرغم من أن جميع الأفكار مرحب بها ومؤهلة للنظر فيها ، إلا أننا نشجع بشكل خاص الأفكار التي تتناول تغير المناخ من خلال الابتكار والتكنولوجيا.</li>
+                            <li>يتطلعون لبدء مشاريع اجتماعية</li>
+                            <li>يبحثون عن اتصالات مع مرشدين وخبراء دوليين</li>
+                            <li>يبحثون عن أشخاص ماهرين، متعاونين، للانضمام إلى مشاريعهم</li>
+                        </ul><a class='apply' target='_blank' href='https://airtable.com/shrJtZZkWeoiSZd6b'>تقدم الآن</a>
+                    </div>
+
+                    <ul class="key">
+                        <li class="entry active" id="leaders" content="<h2>الشباب الطموح من أصحاب المشاريع الاجتماعية الذين..</h2><ul><li>تتراوح أعمارهم بين 18 و 35 سنة</li><li>مستقرون في واحدة من البلدان التالية في منطقة الشرق الأوسط وشمال إفريقيا (تونس ، لبنان ، المغرب ، مصر أو الأردن)</li><li>لديهم أفكار رائعة لإحداث تغيير اجتماعي / بيئي إيجابي في مجتمعهم. على الرغم من أن جميع الأفكار مرحب بها ومؤهلة للنظر فيها ، إلا أننا نشجع بشكل خاص الأفكار التي تتناول تغير المناخ من خلال الابتكار والتكنولوجيا.</li><li>يتطلعون لبدء مشاريع اجتماعية</li><li>يبحثون عن اتصالات مع مرشدين وخبراء دوليين</li><li>يبحثون عن أشخاص ماهرين، متعاونين، للانضمام إلى مشاريعهم</li></ul><a class='apply' target='_blank' href='https://airtable.com/shrJtZZkWeoiSZd6b'>تقدم الآن</a>">القادة</li>
+                        <li class="entry" id="contributors" content="<h2>يشمل المساهمون أي شخص..</h2><ul><li>لديه مجموعة من المهارات</li><li>يبحث عن تجربة مجزية</li><li>يرغب في استخدام مهاراته/ها من أجل الصالح العام</li><li>يرغب في المشاركة والمساهمة في مشروع اجتماعي في منطقة الشرق الأوسط وشمال إفريقيا (تونس ، لبنان ، الأردن ، المغرب أو مصر)</li></ul><a class='apply' href='https://airtable.com/shrjwru43d2R0ID2P' target='_blank'>تقدم الآن</a>">المساهمون</li>
+                        <li class="entry" id="mentors" content="<h2>المرشدون</h2><p>نحن سعداء أن تكون معنا. باعتبارك مرشدًا، ولبضع ساعات في السنة، ستدعم مشاريع ذات مغزى من شأنها إحداث تغييرات إيجابية في المجتمعات في منطقة الشرق الأوسط وشمال إفريقيا وفي نهاية المطاف، في العالم كله.</p><p>يقدر رواد الأعمال لدينا، وكذلك مجتمع Edgeryders، جهودك وتوجيهاتك تقديراً عالياً.</p><p>سيتم منح مرشدينا الأوائل، من حيث الساعات المخصصة والقيمة المضافة لأصحاب المشاريع، زمالات لحضور مهرجان OpenVillage.</p><p>من يدري، قد تجد مشروعك المبتكر التالي الذي يمكنك الانضمام إليه أو الاستثمار فيه D:</p><a class='apply' form='partner' title='Mentors' href='https://airtable.com/shrWJU68ye3g1G8N0' target='_blank'>تقدم الآن</a>">المرشدون</li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="block" id="about">
+                <a id="how"></a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 id="process">الاجراءات</h2>
+                            <div class="split">
+                                <p>تنتهي الاجراءات بمهرجان يجمع المجتمع العالمي ويعمل كواجهة لعرض مشاريع ومهارات أفراد المجتمع.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <section class="swiper-container s2">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="background-color: #EF6327">
+                                        <div class="content">
+                                            <h3><span class='stage'>المرحلة 1</span> أرسل طلبك عبر الفيديو أو كتابياً</h3>
+                                            <div class="caption">
+                                                <p>أخبرنا عن نفسك. سوف يساعدك مدير المجتمع في تقديم وصف جذاب لما تريد القيام به وما هي المساعدة التي تحتاجها من الأقران والموجهين لتحقيق ذلك.. أسهل طريقة هي <a href='https://edgeryders.eu/c/openvillage/OpenVillage-People-Stories' target='_blank'>اتباع التعليمات هنا</a>. إذا كانت لديك أسئلة أو كنت بحاجة إلى مزيد من الدعم ، فيمكنك الاتصال بنا عبر <a href='https://www.facebook.com/OpenCollectiveIntelligenceLAB/' target="_blank">Facebook</a> أو <a href='mailto:zmorda@edgeryders.eu' target='_blank'>البريد الإلكتروني</a>.</p>
+
+                                                <p>إذا كان لديك بالفعل مشروعا تريد دعمًا له، فسيقوم مدراء مجتمعنا بمشاركة مجتمع Edgeryders للمساهمة في التعليقات. وتتضمن ملاحظات مدروسة لمساعدتك في تطوير أفكارك، ومعلومات حول الفرص ذات الصلة، وتوصيلك بجهات الاتصال الخاصة بهم، وتبادل خبراتهم الخاصة والمشورة الشخصية معك.</p>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="footer">
+                                            <div id="date">أغسطس-سبتمبر 2019</div>
+
+                                            <div id="leader">Leaders</div>
+                                            <div id="mentoring">الإرشاد</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" style="background-color: #A4E8DB">
+                                        <div class="content">
+                                            <h3><span class='stage'>المرحلة 2</span>تقييم المجتمع والخبراء</h3>
+                                            <div class="caption">
+                                                <p><span class='highlight'>الأقران</span> يشرك مدراء المجتمع مجتمع MENA YP للمساهمة بملاحظات مدروسة لمساعدتك في تطوير أفكارك، ومعلومات حول الفرص ذات الصلة، وتوصيلك بجهات الاتصال الخاصة بهم، وتبادل خبراتهم الخاصة والمشورة الشخصية معك. نشجعك على فعل نفس الشيء مع أقرانك.</p>
+                                                <p><span class='highlight'>فريق الدعم</span> يتم تعيين فريق من المرشدين ذوي الخبرة العملية ذات الصلة من مجتمع Edgeryders لتقييم طلبك. إنهم يوفرون ملاحظات بناءة حول مشروعك وفريقك، وما تحتاج إلى التركيز عليه للمضي قدمًا في مشروعك وما هي المهارات التي يجب أن تستثمرها في التطوير.
+                                                </p>
+                                                <p>
+                                                    <span class='highlight'>المنظمات الشريكة</span> تقدم برامج ذات سمعة طيبة لدعم أصحاب المشاريع في مستويات مختلفة من النضج ، والتواصل وتوجيهك إلى الفرص المناسبة لدعم خطواتك المقبلة.</p>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <div id="date">أكتوبر - يناير 2020</div>
+
+                                            <div id="mentoring">الإرشاد</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide" style="background-color: #A4E8DB">
+                                        <div class="content">
+                                            <h3><span class='stage'>المرحلة 3</span> مكالمات الفيديو مع المرشدين والمساهمين
+</h3>
+                                            <div class="caption">
+
+                                                <p><b>سيتم اختيار 20 مشروعًا / مقدمًا للحصول على التمويل من قبل موظفي Edgeryders والمرشدين المعينين من المجتمع.
+سيتم دعوة قادة المشروع والمساهمين في المشاريع المختارة إلى سلسلة من 3 مكالمات فيديو مع المرشدين. كل مكالمة لها هدف محدد، قالب إخراج ومجموعة من مهام المتابعة مع تسليمات واضحة المعالم - بالإضافة إلى اقتراح ميزانية لكل إنجاز (هناك حد أعلى متاح لكل مشروع محدد).
+</p> 
+
+</div>
+      </div>
+
+                  <div class="footer">
+                  	<div id="date">سبتمبر-ديسمبر 2019</div>
+
+<div id="matchmaking">التوفيق</div>
+<div id="mentoring">الإرشاد بين الأقران</div>
+
+</div>
+    </div>
+
+    <div class="swiper-slide" style="background-color: #A4E8DB">
+      <div class="content">
+ <h3><span class='stage'>المرحلة 4</span> كمل تحميل مهام المتابعة
+</h3>          <div class="caption">
+                            <p><b>سوف تقوم بتحميل التسليمات / المهام المنجزة على منصة المجتمع. إذا تم اعتبارها مكتملة، سيتم توفير ميزانية تصل إلى 7000 دولار أمريكي لعمل الفريق في هذه المهمة كما هو متفق عليه مع فريق Edgeryders.</b></p>
+                                                <p>الفرق التي أكملت جميع التسليمات كما تمت الموافقة عليها والتحقق من صحتها من خلال عملية تقييم مفتوحة على منصة المجتم ، تفتح الميزانية المخصصة لكل ناتج (يتم تعويض المساهمين عن جانبهم من العمل كما هو محدد في الميزانية المعتمدة مسبقًا).</p>
+                                                <p>إذا لم يتم اختيار نشاطك للتمويل ، فذلك لأننا نشعر أنك بحاجة إلى تطوير المشروع أو مهاراتك أكثر من ذلك.<b> منظماتنا الشريكة التي تقدم برامج ذات سمعة طيبة لدعم أصحاب المشاريع في مستويات مختلفة من النضج ستقوم بالتواصل معك وتوجيهك إلى الفرص المناسبة لدعم خطواتك المقبلة.</b></p>
+
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <div id="date">أكتوبر 2019 - يناير </div>
+
+                                            <div id="open_source">المصادر المفتوحة</div>
+                                            <div id="mentoring">الإرشاد بين الأقران</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide" style="background-color: #A4E8DB">
+                                        <div class="content">
+                                            <h3><span class='stage'>المرحلة 5</span> إعداد دورة المهرجان
+</h3>
+                                            <div class="caption">
+                                                <p>تقوم الفرق بتكوين العرض التقديمي النهائي لما قاموا به على شكل جلسة للمهرجان: (تحدث، محادثة خاضعة للإشراف، ندوة عبر الإنترنت أو ورشة عمل)</p>
+                                                <p>يعمل المهرجان كواجهة لعرض رواد الأعمال ومشاريعهم: إنه يجلب مشاركة وسائل الإعلام والممولين المحتملين والمستثمرين والمواهب والحلفاء الضروريين.
+                                                </p>
+                                                <p>سيتم تقديم منح صغيرة للفرق النهائية المختارة بغرض:
+                                                    <ul>
+                                                        <li>السفر إلى بروكسل، مع تغطية جميع التكاليف</li>
+                                                        <li>حضور مهرجان OpenVillage</li>
+                                                        <li>التعرف على أقرانهم ومرشديهم لتطوير أفكارهم</li>
+                                                        <li>عرض أفكارهم على مجتمع Edgeryders للحصول على التمويل</li>
+                                                    </ul>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <div id="date">أبريل 2020</div>
+
+                                            <div id="fellowship">برامج الزمالة</div>
+                                            <div id="academy">الأكاديمية</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide" style="background-color: #A4E8DB">
+                                        <div class="content">
+                                            <h3><span class='stage'>المرحلة 6</span> التقييم والدفع
+</h3>
+                                            <div class="caption">
+                                                <p>الفرق التي أكملت جميع التسليمات كما تمت الموافقة عليها والتحقق من صحتها من خلال عملية تقييم مفتوحة على منصة المجتم ، تفتح الميزانية المخصصة لكل ناتج (يتم تعويض المساهمين عن جانبهم من العمل كما هو محدد في الميزانية المعتمدة مسبقًا).</p>
+                                                <p>ستستفيد الفرق الزميلة من التمويل الأساسي الذي يتم إنفاقه وفقًا لخطة العمل، من أجل البدء في تنفيذ مشاريعها.</p>
+                                                <p>سيستمر مجتمع Edgeryders في توفير الدعم من خلال المنصة ومكالمات المجتمع.</p>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <div id="date">مايو 2020</div>
+
+                                            <div id="funding">التمويل</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide" style="background-color: #A4E8DB">
+                                        <div class="content">
+                                            <h3><span class='stage'>المرحلة 7</span> دعم المتابعة *
+</h3>
+                                            <div class="caption">
+                                                <p>تتم دعوة الفرق إلى زمالة الإقامة لمدة عام واحد في أحد بيوت الابتكار التي يتم خلالها تغطية الإيجار وجميع تكاليف المعيشة من قبل البرنامج. حتى يتمكنوا من التركيز على بناء الشركة والإيرادات.</p>
+                                                <p>كل منزل لديه فريق دعم ومجموعة من أموال المشروع لدعم عمل فرق المشروع على بناء مشروعهم. ويتبع الصرف منها عملية مماثلة لتلك الخاصة بالمرحلة السابقة.</p>
+                                                <p>يتم تطوير كل دار ابتكار وإدارتها ومشاركتها محليًا من قبل المشاركين في البرنامج.</p>
+                                                <p style="color: #E96C2F">* يخضع لتأمين الأموال اللازمة لSwarmfund</p>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <div id="date">يونيو 2020</div>
+
+                                            <div id="swarm">إسكان Swarm</div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- If we need pagination -->
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev swiper-button-white"></div>
+                                <div class="swiper-button-next swiper-button-white"></div>
+                            </section>
+
+                            <div class="split">
+                                <p>سيحصل كل من يشارك في العملية التالية على تذكرة للمهرجان ودخول مجاني إلى ندواتنا عبر الإنترنت التي ينتجها رواد أعمال اجتماعيون لأصحاب المشاريع الاجتماعية.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="block green" id="join">
+                <a id="start"></a>
+                <div id="join-us">
+                    <h2 class="join-title"> ابدأ اليوم</h2>
+                </div>
+                <div class="apply">
+                    <div>
+                        <h3>هل لديك مشروع؟</h3>
+                        <a href="https://airtable.com/shrJtZZkWeoiSZd6b" target="_blank" class="apply-button">تقدم الآن</a>
+                    </div>
+                    <div>
+                        <h3>هل تبحث عن مشروع للمساهمة فيه؟</h3>
+                        <a href="https://airtable.com/shrjwru43d2R0ID2P" target="_blank" class="apply-button">تقدم هنا</a>
+                    </div>
+                    <div>
+                        <h3>تريد أن تصبح مرشدا لشاب من رواد الأعمال الإجتماعية؟</h3>
+                        <a href="https://airtable.com/shrWJU68ye3g1G8N0" target="_blank" class="apply-button">مرحبا!</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="block green" id="join">
+                <div id="join-us">
+                    <h2 class="join-title">ابق على اتصال</h2>
+                </div>
+
+                <div class="social-contacts">
+                    <div class="box">
+                        <h3>#CountOnMe</h3>
+                        <p>غير متأكد من كيفية المساهمة؟ ساعدنا في صنع العناوين من خلال الانضمام إلى #CountOnMe. ستتلقى قصصًا بصفةٍ منتظمة في صندوق الوارد الخاص بك لمشاركتها على شبكاتك الخاصة.</p>
+
+                        <form action="https://tinyletter.com/edgeryders" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/edgeryders', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                            <input class="email" type="text" name="email" id="tlemail" value="البريد الإلكتروني" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
+                            <input type="submit" class="submit" value="" />
+                        </form>
+                    </div>
+
+                    <div class="box">
+                        <h3>النشرة الإخبارية</h3>
+                        <p>تحديث أسبوعي على جميع المستجدات من مجتمع Edgeryders و #OpenVillage.</p>
+                        <form action="https://edgeryders.us2.list-manage.com/subscribe/post?u=2426561089e1f5ab32da252cd&amp;id=8a173e588c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <input type="text" value="البريد الإلكتروني" name="EMAIL" class="required email" id="mce-EMAIL" size="40" style="color: black" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                            <div id="mce-responses" class="clear">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>
+                            <input type="submit" class="submit" value="" name="subscribe" id="mc-embedded-subscribe">
+                        </form>
+
+                    </div>
+
+                    <div class="box">
+                        <h3>تابعنا</h3>
+                        <p>احصل على آخر التحديثات من Edgeryders على الشبكات الاجتماعية المفضلة لديك.</p>
+
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/Edgeryders/" target="_blank">
+                                <i class="fa fa-facebook circle"></i>
+                            </a>
+                            <a href="https://twitter.com/edgeryders">
+                                <i class="fa fa-twitter circle"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/edgeryders">
+                                <i class="fa fa-linkedin circle"></i>
+                            </a>
+
+                            <br />
+
+                            <a href="https://twitter.com/home?status=@edgeryders #ocilab" class="tweet" target="_blank">أرسل لنا تغريدة</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="questions">
+                    <div class="center-q">
+                        <h1>هل ما زلت مهتماً؟</h1>
+                        <p>اشترك في منصة edgeryders و <a href="https://edgeryders.eu/t/about-the-tell-us-about-you-category/10652" target="_blank"> انشر سؤالك هنا</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="block black">
+                <div class="container">
+
+                    <div class="row" style="margin-top: -20px">
+                        <div class="col-12" id="colophon">
+                            <h1>من نحن؟</h1>
+                            <p>يعد OCI Lab جزءًا من مشروع OpenVillage، وهو نظام بيئي من الند للند تم إنشاؤه بالشراكة وتنسيقه من قِبل Edgeryders، وهو مجتمع يضم حوالي 6000 من صانعي التغيير، بما في ذلك رواد الأعمال والناشطين ومهووسي التكنولوجيا والمفكرين والأساتذة والخبراء والعديد من الآخرين في أكثر من 50 دولة. مهمتنا هي المشاركة في إنشاء مشاريع مكتفية ذاتيا من أجل الصالح العام.</p>
+                            <p>لمزيد من المعلومات حول Edgeryders، تفضل بزيارة <a href='https://edgeryders.eu' target="_blank">منصتنا</a> ou <a href='mailto:community@edgeryders.eu' target='_blank'>بالكتابة إلينا</a>.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="fakeScrollContainer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.min.js"></script>
+
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+
+    <script src="../assets/js/parachute-min.js"></script>
+
+    <script>
+        const player = new Plyr('#player', {
+            controls: ['play', 'play-large', 'progress', 'current-time', 'volume'],
+        });
+
+        $(document).ready(function() {
+            Parachute.page({
+                    scrollContainer: "#scrollContainer",
+                    heightContainer: "#fakeScrollContainer"
+                }),
+                Parachute.init(),
+                $(".button").on("click", function() {
+                    return $(this).toggleClass("active");
+                }),
+                $(".button").click(function() {
+                    $(".menu").slideToggle("fast", function() {});
+                }),
+                $("a").on("click", function(o) {
+                    if ("" !== this.hash) {
+                        o.preventDefault();
+                        var t = this.hash;
+                        $("html, body").animate({
+                                scrollTop: $(t).offset().top
+                            },
+                            800,
+                            function() {
+                                window.location.hash = t;
+                            }
+                        );
+                    }
+                }),
+                $(".apply").click(function() {
+                    (modalTitle = $(this).attr("title")), (modalForm = $(this).attr("form")),
+                    $("#cards").fadeOut(200),
+                        $(".green, .form-header").addClass(modalForm + "-bg"),
+                        $("#title").text("Application | " + modalTitle),
+                        $(".application")
+                        .show()
+                        .addClass(modalForm + " animated zoomIn"),
+                        $("#" + modalForm)
+                        .show()
+                        .addClass("moveup");
+                }),
+                $(".entry").click(function() {
+                    (modalContent = $(this).attr("content")),
+                    $("#legend").html(modalContent),
+                        $("li.entry").removeClass("active"),
+                        $(this).addClass("active")
+                }),
+                $(".value").click(function() {
+                    (valueContent = $(this).attr("content")),
+                    $("#field").html(valueContent),
+                        $("li.value").removeClass("active"),
+                        $(this).addClass("active")
+                }),
+                $(".close").click(function() {
+                    $(".green, .form-header").removeClass(modalForm + "-bg"),
+                        $("#" + modalForm)
+                        .removeClass("moveup")
+                        .hide(),
+                        $(".application").fadeOut(200),
+                        $("#cards").show();
+                });
+        });
+    </script>
+    <script>
+        // Params
+        var sliderSelector = '.s2',
+            options = {
+                init: false,
+                loop: true,
+                speed: 800,
+                slidesPerView: 2, // or 'auto'
+                // spaceBetween: 10,
+                centeredSlides: true,
+                effect: 'coverflow', // 'cube', 'fade', 'coverflow',
+                coverflowEffect: {
+                    rotate: 50, // Slide rotate in degrees
+                    stretch: 0, // Stretch space between slides (in px)
+                    depth: 100, // Depth offset in px (slides translate in Z axis)
+                    modifier: 1, // Effect multipler
+                    slideShadows: true, // Enables slides shadows
+                },
+                grabCursor: true,
+                parallax: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    1023: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    }
+                },
+
+            };
+
+        var mySwiper = new Swiper(sliderSelector, options);
+
+        // Initialize slider
+        mySwiper.init();
+
+        var visionSwiper = new Swiper('.s1', {
+            // Optional parameters
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+
+        tippy('#process', {
+            content: "Our entire incubation platform is online. No papers to sign, no obligations, no complex procedures.",
+            arrow: true,
+            theme: 'process',
+        })
+
+        tippy('#geography', {
+            content: "No matter where you live, we are bringing our expertise, mentors and network to your door",
+            arrow: true,
+            theme: 'geography',
+        })
+
+        tippy('#personalised', {
+            content: "We believe a resilient P2P ecosystem brings much more value than regular processes. We're connected to the right peers and mentors to support you in building your venture.",
+            arrow: true,
+            theme: 'personalised',
+        })
+
+        tippy('#international', {
+            content: "We are a resilient community of 6000 changemakers from over 70 countries ranging from entrepeneurs, doctors, experts, investors, policymakers, IT and blockchain experts and more.. We act local but think global.",
+            arrow: true,
+            theme: 'international',
+        })
+
+        tippy('#imagination', {
+            content: "We are rethinking broken systems and reshaping the future of our communities and we think the craziest ideas, no matter how ambitious, can help acheive this.",
+            arrow: true,
+            theme: 'imagination',
+        })
+
+        tippy('#open_source', {
+            content: "Open Source is our core philosophy. All of our technologies are open for participants to bring positive change to their communities and to the world.",
+            arrow: true,
+            theme: 'open_source',
+        })
+    </script>
+</body>
+
+</html>
