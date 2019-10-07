@@ -552,7 +552,50 @@ a.join-button {
   color: black;
   text-decoration: underline;
 }
+
+.terms {
+  padding: 0;
+  padding-bottom: 20px;
+  direction: ltr !important;
+}
+
+.terms * {
+  direction: ltr !important;
+}
+.terms .container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.terms .conditions p, .terms .contact a {
+  font-size: 17px;
+  color: white;
+  width: 100%;
+}
+
+.terms .contact a {
+   font-size: 17px;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  padding: 5px 0px;
+}
+
+.terms .contact p {
+border-bottom: 1px solid white;
+  }
+.terms .contact {
+  padding-left: 40px;
+}
+
+.terms .container .conditions {
+  width: 70%
+}
+
 @media (max-width: 1200px) {
+
   #points h3 {
     font-size: 1.6em
   }
@@ -642,6 +685,20 @@ a.join-button {
   }
 }
 @media (max-width: 768px) {
+.terms {
+  padding-bottom: 90px
+}
+  .terms .container {
+  padding-top: 20px;
+  display: block;
+  flex-direction: row;
+}
+
+.terms .conditions, .terms .contact {
+  width: 100% !important;
+  padding: 0 20px;
+}
+
   #colophon {
     background: url(../img/laptop.png) center 20px no-repeat;
     background-size: 47%;
@@ -2936,4 +2993,6 @@ margin-bottom: 24px
 .tippy-tooltip.open_source-theme[x-placement^='right'] .tippy-arrow {
   border-right-color: RGBA(79, 191, 232, 1.00);
 }
+
+
 
